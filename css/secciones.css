@@ -54,6 +54,8 @@ html {
     border-radius: 20px;
 }
 
+
+/* Estilos generales de las secciones */
 .seccion {
     padding: 100px 10%;
     color: white;
@@ -132,6 +134,35 @@ html {
     font-size: 30px;
 }
 
+
+/* Seccion de matricula */
+.seccion-matriculate {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 1fr auto auto auto 1fr;
+    grid-template-areas:
+        ". form"
+        "antetitulo form"
+        "titulo form"
+        "texto form"
+        ". form";
+    gap: 0 60px;
+    background: var(--oscuro);
+}
+
+.tarjeta-contacto {
+    grid-area: form;
+    padding: 30px;
+    background: white;
+    color: var(--texto);
+    border-radius: 14px;
+}
+
+.contacto-titulo {
+    font-size: 18px;
+}
+
+
 /* Seccion de escuelas */
 .seccion-escuelas {
     display: grid;
@@ -189,11 +220,23 @@ html {
 }
 
 
-/* footer de pagina */
-.footer {
+/* Pie de pagina */
+.pie {
     padding: 30px;
     background: var(--medio);
     color: white;
     text-align: center;
     font-size: 14px;
+}
+/* Enlace a la página de registro dentro del formulario de contacto */
+.tarjeta-contacto p {
+    margin-top: 14px;
+    text-align: center;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.tarjeta-contacto p a {
+    color: var(--azul);
+    font-weight: 600;
 }

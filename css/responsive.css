@@ -1,7 +1,13 @@
 /* tablet */
 @media (max-width: 900px) {
+    section {
+        scroll-margin-top: 110px;
+    }
+
+    
     .encabezado {
         flex-wrap: wrap;
+        row-gap: 10px;
         padding: 10px 20px;
     }
 
@@ -15,9 +21,19 @@
         gap: 24px;
     }
 
-    /* todo pasa a una sola columna */
-    .contenido,
+   
+    .contenido {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .seccion-tabla {
+        overflow-x: auto;
+    }
+
+    
     .hero,
+    .seccion-matriculate,
     .seccion-escuelas {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -28,6 +44,10 @@
         padding: 50px 20px;
     }
 
+    .seccion-matriculate {
+        grid-template-areas: "antetitulo" "titulo" "texto" "form";
+    }
+
     .seccion-escuelas {
         grid-template-areas: "antetitulo" "titulo" "texto" "beneficios" "imagen";
     }
@@ -36,43 +56,87 @@
         padding: 60px 20px;
     }
 
-    .hero-titulo,
+    .hero-titulo {
+        font-size: 36px;
+    }
+
     .seccion-titulo {
         font-size: 32px;
     }
 
     .hero-imagen,
-    .escuelas-imagen {
+    .escuelas-imagen,
+    .tarjeta-contacto {
         margin-top: 30px;
     }
 
-    .pilares {
-        grid-template-columns: 1fr;
+    .escuelas-imagen {
+        min-height: 280px;
     }
 
     .cifras {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .submenu {
-        left: auto;
-        right: 0;
-    }
 }
 
 /* celular */
 @media (max-width: 600px) {
+    
+    .logo img {
+        width: 40px;
+    }
+
+    .encabezado .boton {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
     .menu-lista {
-        gap: 16px;
+        flex-wrap: wrap;
+        gap: 6px 16px;
     }
 
     .menu-enlace {
         font-size: 13px;
     }
 
-    .hero-titulo,
+    .submenu {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    
+    .contenido {
+        padding: 20px 12px;
+    }
+
+    .tarjeta-formulario,
+    .seccion-tabla,
+    .tarjeta-contacto {
+        padding: 20px;
+    }
+
+    .tabla {
+        font-size: 13px;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 10px 6px;
+    }
+
+    
+    .hero-titulo {
+        font-size: 30px;
+    }
+
     .seccion-titulo {
         font-size: 26px;
+    }
+
+    .hero-texto,
+    .seccion-texto {
+        font-size: 15px;
     }
 
     .hero-boton {
@@ -80,8 +144,16 @@
         text-align: center;
     }
 
-    .tarjeta-formulario,
-    .tarjeta-lateral {
-        padding: 20px;
+    .pilares {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cifras strong {
+        font-size: 24px;
+    }
+
+    .escuelas-imagen {
+        min-height: 220px;
     }
 }

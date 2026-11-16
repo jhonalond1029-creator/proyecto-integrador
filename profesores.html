@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores | Registro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+    <link rel="icon" type="img/png" href="assets/favicon/favicon-96x96.png">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo.png" alt="Logo de la institucion">
+        </a>
+
+        <nav class="menu">
+            <ul class="menu-lista">
+                <li><a href="index.html" class="menu-enlace">Inicio</a></li>
+                <li><a href="matriculaEstudiantes.html" class="menu-enlace">Estudiantes</a></li>
+                <li><a href="profesores.html" class="menu-enlace activo">Profesores</a></li>
+                <li><a href="cursos.html" class="menu-enlace">Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+
+        <section class="tarjeta-formulario">
+            <h1 class="titulo-formulario">Registro de Profesor</h1>
+
+            <form action="#" method="post" class="formulario">
+                
+                <label for="nombre" class="etiqueta">Nombre del Profesor</label>
+                <input type="text" id="nombre" name="nombre" class="campo"
+                       placeholder="Ingrese el nombre" required>
+                <label for="documento" class="etiqueta">Numero de Documento</label>
+                <input type="text" id="documento" name="documento" class="campo"
+                       placeholder="Ingrese el numero de documento"
+                       inputmode="numeric" pattern="[0-9]{6,10}"
+                       title="Solo numeros, entre 6 y 10 digitos" required>
+                <label for="correo" class="etiqueta">Correo Electronico</label>
+                <input type="email" id="correo" name="correo" class="campo"
+                       placeholder="Ingrese su direccion de correo" required>
+
+                <label for="telefono" class="etiqueta">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" class="campo"
+                       placeholder="Numero telefonico" required>
+
+                <label for="especialidad" class="etiqueta">Especialidad</label>
+                <select id="especialidad" name="especialidad" class="campo" required>
+                    <option value="" disabled selected>Seleccione la especialidad</option>
+                    <option value="programacion">Programacion</option>
+                    <option value="base-datos">Base de Datos</option>
+                    <option value="diseno-web">Diseno Web</option>
+                    <option value="telecomunicaciones">Telecomunicaciones</option>
+                    <option value="inteligencia-artificial">Inteligencia Artificial</option>
+                    <option value="seguridad-informatica">Seguridad Informatica</option>
+                </select>
+
+                <button type="submit" class="boton boton-registro">Registrar</button>
+            </form>
+        </section>
+
+        <section class="seccion-tabla">
+            <h2 class="titulo-tabla">Profesores Registrados</h2>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos Rodriguez</td>
+                        <td>Programacion</td>
+                        <td>carlos.rodriguez@correo.com</td>
+                    </tr>
+                    <tr>
+                        <td>Luisa Gomez</td>
+                        <td>Base de Datos</td>
+                        <td>luisa.gomez@correo.com</td>
+                    </tr>
+                    <tr>
+                        <td>Francisco Duarte</td>
+                        <td>Diseno Web</td>
+                        <td>francisco.duarte@correo.com</td>
+                    </tr>
+                    <tr>
+                        <td>Marcelo Lopez</td>
+                        <td>Telecomunicaciones</td>
+                        <td>marcelo.lopez@correo.com</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Osorio</td>
+                        <td>Inteligencia Artificial</td>
+                        <td>juan.osorio@correo.com</td>
+                    </tr>
+                    <tr>
+                        <td>Isabela Cortez</td>
+                        <td>Seguridad Informatica</td>
+                        <td>isabela.cortez@correo.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

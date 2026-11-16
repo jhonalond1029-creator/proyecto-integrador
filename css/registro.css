@@ -4,6 +4,14 @@
     align-content: start;
 }
 
+.tarjeta-lateral {
+    padding: 30px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
 .tarjeta-lateral p {
     margin: 14px 0 18px;
     color: var(--gris);
@@ -93,4 +101,10 @@
 .perfil dd {
     font-weight: 600;
     word-break: break-all;
+}
+
+@media (max-width: 600px) {
+    .tarjeta-lateral {
+        padding: 20px;
+    }
 }
