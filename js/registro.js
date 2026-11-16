@@ -30,10 +30,13 @@ formulario.addEventListener('submit', function (event) {
 
     if (hayAdmin === false) {
         usuarios.push({
-            usuario: 'admin',
-            correo: 'admin@correo.com',
-            contrasena: 'admin123',
-            rol: 'administrador'
+        nombre: 'admin',
+        correo: 'admin@gmail',
+        telefono: '000000000000',
+        password: 'admin',
+        usuario: 'admin1',
+        rol: 'administrador'
+
         })
         localStorage.setItem('usuarios', JSON.stringify(usuarios))
     }
