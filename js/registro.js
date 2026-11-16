@@ -3,8 +3,8 @@ const nombre = document.querySelector('#nombre')
 const correo = document.querySelector('#correo')
 const telefono = document.querySelector('#telefono')
 
-const repassword = document.querySelector('#repassword')
-const password = document.querySelector('#password')
+const repassword = document.querySelector('#contrasena')
+const password = document.querySelector('#contrasena')
 const usuario = document.querySelector('#usuario')
 
 formulario.addEventListener('submit', function (event) {
