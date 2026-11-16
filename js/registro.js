@@ -4,7 +4,7 @@ const correo = document.querySelector('#correo')
 const telefono = document.querySelector('#telefono')
 
 const repassword = document.querySelector('#contrasena')
-const password = document.querySelector('#contrasena')
+const contrasena = document.querySelector('#contrasena')
 const usuario = document.querySelector('#usuario')
 
 formulario.addEventListener('submit', function (event) {
@@ -33,7 +33,7 @@ formulario.addEventListener('submit', function (event) {
         nombre: 'admin',
         correo: 'admin@gmail',
         telefono: '000000000000',
-        password: 'admin',
+        contrasena: 'admin',
         usuario: 'admin1',
         rol: 'administrador'
 
@@ -66,7 +66,7 @@ formulario.addEventListener('submit', function (event) {
         nombre: nombre.value.trim(),
         correo: correo.value.trim(),
         telefono: telefono.value.trim(),
-        password: password.value,
+        contrasena: contrasena.value,
         usuario: usuario.value.trim(),
         rol: 'estudiante'
 
