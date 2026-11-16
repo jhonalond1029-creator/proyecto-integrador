@@ -18,3 +18,4 @@ recuperarContraseña.addEventListener('click',()=>{
     alert('se ha enviado un correo de recuperación de la contraseña')
 })
 
+

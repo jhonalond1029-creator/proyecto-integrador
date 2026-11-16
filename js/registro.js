@@ -10,7 +10,7 @@ const usuario = document.querySelector('#usuario')
 formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (password.value !== repassword.value) {
+    if (contrasena.value !== contrasena.value) {
         alert('la contraseña no coincide');
         return
     }
