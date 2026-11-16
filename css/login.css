@@ -93,10 +93,19 @@ body{
 }
 
 .campo-ojo{
+    display: flex;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+}
+
+/* Íconos del login: las imágenes son negras, el filtro invert(1) las vuelve blancas */
+.campo-icono,
+.campo-ojo img{
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
 }
 
 .enlace-chico{
