@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Valentina Garcia",
+    "correo": "valtinatierres@gmail.com",
+    "telefono": "31048945825",
+    "password": "usuario1",
+    "usuario": "vale1",
+    "roll": "estudiante"
+  },
+  {
+    "nombre": "Cristian Castro",
+    "correo": "criscast@gmail.com",
+    "telefono": "32248924598",
+    "password": "usuario2",
+    "usuario": "cis1",
+    "roll": "estudiante"
+  },
+  {
+    "nombre": "Francisco Leon",
+    "correo": "pacholeo@gmail.com",
+    "telefono": "32248924598",
+    "password": "usuario3",
+    "usuario": "pacho1",
+    "roll": "estudiante"
+  }
+]
