@@ -42,7 +42,7 @@ formLogin.addEventListener('submit', async function (e) {
 
         for (let i = 0; i < usuarios.length; i++) {
             let coincideUsuario = usuarios[i].usuario === usuario;
-            let coincideClave = usuarios[i].password === contrasena;
+            let coincideClave = usuarios[i].contrasena === contrasena;
 
             if (coincideUsuario && coincideClave) {
                 encontrado = usuarios[i];
@@ -51,15 +51,18 @@ formLogin.addEventListener('submit', async function (e) {
 
         if (encontrado !== null) {
 
-            alert(`Bienvenido ${encontrado.nombre}`);
-            intentos = 0;
+            setTimeout(()=>{
 
-            if (encontrado.roll === 'administrador') {
-                window.location.href = 'profesores.html';
-            } else {
-                window.location.href = 'estudiante.html';
-            }
-
+                alert(`Bienvenido ${encontrado.nombre}`);
+                intentos = 0;
+                
+                if (encontrado.rol === 'administrador') {
+                    window.location.href = 'profesores.html';
+                } else {
+                    window.location.href = 'estudiante.html';
+                }
+            },2000)
+                
         } else {
             intentos++;
             let restantes = maxIntentos - intentos;
