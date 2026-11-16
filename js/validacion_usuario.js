@@ -1,3 +1,4 @@
+
 const maxIntentos = 3;
 let intentos = 0;
 
@@ -9,8 +10,17 @@ const btnLogin = document.getElementById("btn-login");
 const mensaje = document.getElementById("login-mensaje");
 
 
+async function cargarUsuariosJSON() {
+    const response = await fetch('usuarios.json');
 
-formLogin.addEventListener('submit', function (e) {
+    return await response.json();
+}
+
+function cargarUsuariosLocales() {
+    return JSON.parse(localStorage.getItem('usuarios')) || [];
+}
+
+formLogin.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     let usuario = inputUsuario.value.trim();
@@ -23,51 +33,50 @@ formLogin.addEventListener('submit', function (e) {
         return;
     }
 
-    //traer usuarios del local storage
-    let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+    try {
+        const usuariosJSON = await cargarUsuariosJSON();
+        const usuariosLocales = cargarUsuariosLocales();
+        const usuarios = usuariosJSON.concat(usuariosLocales);
 
-    if (usuarios === null) {
-        usuarios = [];
-    }
+        let encontrado = null;
 
-    let encontrado = null;
+        for (let i = 0; i < usuarios.length; i++) {
+            let coincideUsuario = usuarios[i].usuario === usuario;
+            let coincideClave = usuarios[i].password === contrasena;
 
-    for (let i = 0; i < usuarios.length; i++) {
-        let coincideUsuario = usuarios[i].usuario === usuario;
-        let coincideClave = usuarios[i].password === contrasena;
-
-        if (coincideUsuario && coincideClave) {
-            encontrado = usuarios[i];
+            if (coincideUsuario && coincideClave) {
+                encontrado = usuarios[i];
+            }
         }
-    }
 
-   
-    if (encontrado !== null) {
+        if (encontrado !== null) {
 
-        
-        alert("Bienvenido,"+encontrado.nombre+" ingreso exitoso");
-        intentos = 0;
+            alert(`Bienvenido ${encontrado.nombre}`);
+            intentos = 0;
 
-        //si aquí se encontró el usuario y conincide con la contraseña hay que guardar los datos de la sesion
+            if (encontrado.roll === 'administrador') {
+                window.location.href = 'profesores.html';
+            } else {
+                window.location.href = 'estudiante.html';
+            }
 
-        if (encontrado.rol === 'administrador') {
-            window.location.href = 'profesores.html' // redireccionar a la pagina de administrador
         } else {
-            window.location.href = 'estudiante.html' // redireccionar a la pagina de estudiante
-        }
-        
-    } else {
-        intentos++;
-        let restantes = maxIntentos - intentos;
+            intentos++;
+            let restantes = maxIntentos - intentos;
 
-        if (intentos >= maxIntentos) {
-            alert("Has superado el número de intentos");
-            window.location.href = 'registro.html'
-        } else {
-            mensaje.textContent = `Usuario o contraseña incorrectos. Te quedan ${restantes} intentos`;
-            inputUsuario.value = "";
-            inputContrasena.value = "";
-            inputContrasena.focus();
+            if (intentos >= maxIntentos) {
+                alert("Has superado el número de intentos");
+                window.location.href = 'registro.html';
+            } else {
+                mensaje.textContent = `Usuario o contraseña incorrectos. Te quedan ${restantes} intentos`;
+                inputUsuario.value = "";
+                inputContrasena.value = "";
+                inputContrasena.focus();
+            }
         }
+
+    } catch (error) {
+        console.error(error);
+        mensaje.textContent = "No se pudo cargar la información, intenta más tarde";
     }
 });
