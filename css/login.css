@@ -152,7 +152,11 @@ body{
 .btn-secundario{
     margin-top: 14px;
     background: transparent;
-    border: none;
+    border: 1px solid rgb(255, 255, 255, 0.6);
     color: var(--blanco);
     text-decoration: none;
+}
+
+.btn-secundario:hover{
+    background: rgb(255, 255, 255, 0.15);
 }
