@@ -51,11 +51,10 @@ formLogin.addEventListener('submit', function (e) {
         //si aquí se encontró el usuario y conincide con la contraseña hay que guardar los datos de la sesion
 
         if (encontrado.rol === 'administrador') {
-            window.location.href = 'admin.html' // redireccionar a la pagina de administrador
+            window.location.href = 'matriculaEstudiantes.html' // redireccionar a la pagina de administrador
         } else {
             window.location.href = 'estudiante.html' // redireccionar a la pagina de estudiante
         }
-
         
     } else {
         intentos++;
@@ -66,6 +65,7 @@ formLogin.addEventListener('submit', function (e) {
             window.location.href = 'registro.html'
         } else {
             mensaje.textContent = `Usuario o contraseña incorrectos. Te quedan ${restantes} intentos`;
+            inputUsuario.value = "";
             inputContrasena.value = "";
             inputContrasena.focus();
         }

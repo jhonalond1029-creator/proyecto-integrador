@@ -22,3 +22,12 @@ inputNombre.addEventListener('input', function () {
         avatar.textContent = '?';
     }
 })
+
+// Cuando se presiona "Limpiar", la vista previa vuelve a su estado inicial
+let formRegistro = document.querySelector('#form-registro')
+
+formRegistro.addEventListener('reset', function () {
+    pvUsuario.textContent = '—';
+    pvCorreo.textContent = '—';
+    avatar.textContent = '?';
+})

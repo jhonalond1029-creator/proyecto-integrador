@@ -24,7 +24,12 @@ img {
 }
 
 input,
+select,
 button {
     font: inherit;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}

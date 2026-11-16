@@ -10,9 +10,6 @@ const usuario = document.querySelector('#usuario')
 formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
-
-
-    //validar password y repasword
     if (password.value !== repassword.value) {
         alert('la contraseña no coincide');
         return
@@ -76,5 +73,5 @@ formulario.addEventListener('submit', function (event) {
 
     alert('¡Registro exitoso!')
     formulario.reset()
-    window.location.href = 'estudiante.html'
+    window.location.href = 'login.html'
 })

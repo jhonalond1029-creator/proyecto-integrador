@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos | Registro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+    <link rel="icon" type="img/png" href="assets/favicon/favicon-96x96.png">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo.png" alt="Logo de la institucion">
+        </a>
+
+        <nav class="menu">
+            <ul class="menu-lista">
+                <li><a href="index.html" class="menu-enlace">Inicio</a></li>
+                <li><a href="matriculaEstudiantes.html" class="menu-enlace">Estudiantes</a></li>
+                <li><a href="profesores.html" class="menu-enlace">Profesores</a></li>
+                <li><a href="cursos.html" class="menu-enlace activo">Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+
+        <section class="tarjeta-formulario">
+            <h1 class="titulo-formulario">Registro de Curso</h1>
+
+            <form action="#" method="post" class="formulario">
+                <label for="codigo" class="etiqueta">Codigo del Curso</label>
+                <input type="text" id="codigo" name="codigo" class="campo"
+                       placeholder="Ejemplo: PRG101"
+                       pattern="[A-Z]{3}[0-9]{3}"
+                       title="3 letras mayusculas y 3 numeros, por ejemplo PRG101" required>
+
+                <label for="nombre" class="etiqueta">Nombre del Curso</label>
+                <input type="text" id="nombre" name="nombre" class="campo"
+                       placeholder="Ingrese el nombre del curso" required>
+
+                <label for="profesor" class="etiqueta">Profesor</label>
+                <select id="profesor" name="profesor" class="campo" required>
+                    <option value="" disabled selected>Seleccione el profesor</option>
+                    <option value="carlos-rodriguez">Carlos Rodriguez</option>
+                    <option value="luisa-gomez">Luisa Gomez</option>
+                    <option value="francisco-duarte">Francisco Duarte</option>
+                    <option value="marcelo-lopez">Marcelo Lopez</option>
+                    <option value="juan-osorio">Juan Osorio</option>
+                    <option value="isabela-cortez">Isabela Cortez</option>
+                </select>
+
+                <label for="horario" class="etiqueta">Horario</label>
+                <input type="time" id="horario" name="horario" class="campo"
+                       min="06:00" max="21:00" required>
+
+                <label for="cupos" class="etiqueta">Cupos</label>
+                <input type="number" id="cupos" name="cupos" class="campo"
+                       placeholder="Cantidad de estudiantes"
+                       min="1" max="40" required>
+
+                <button type="submit" class="boton boton-registro">Registrar</button>
+            </form>
+        </section>
+
+        <section class="seccion-tabla">
+            <h2 class="titulo-tabla">Cursos Registrados</h2>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PRG101</td>
+                        <td>Programacion</td>
+                        <td>Carlos Rodriguez</td>
+                        <td><span class="horario">8:00 AM</span></td>
+                    </tr>
+                    <tr>
+                        <td>BDD102</td>
+                        <td>Base de Datos</td>
+                        <td>Luisa Gomez</td>
+                        <td><span class="horario">10:00 AM</span></td>
+                    </tr>
+                    <tr>
+                        <td>DSW103</td>
+                        <td>Diseno Web</td>
+                        <td>Francisco Duarte</td>
+                        <td><span class="horario">11:00 AM</span></td>
+                    </tr>
+                    <tr>
+                        <td>TEL104</td>
+                        <td>Telecomunicaciones</td>
+                        <td>Marcelo Lopez</td>
+                        <td><span class="horario">2:00 PM</span></td>
+                    </tr>
+                    <tr>
+                        <td>INA105</td>
+                        <td>Inteligencia Artificial</td>
+                        <td>Juan Osorio</td>
+                        <td><span class="horario">4:00 PM</span></td>
+                    </tr>
+                    <tr>
+                        <td>SEG106</td>
+                        <td>Seguridad Informatica</td>
+                        <td>Isabela Cortez</td>
+                        <td><span class="horario">6:00 PM</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

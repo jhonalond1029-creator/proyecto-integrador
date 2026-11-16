@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+    <link rel="icon" type="img/png" href="assets/favicon/favicon-96x96.png">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/componentes.css">
@@ -17,28 +18,28 @@
 <body>
 
     <header class="encabezado">
-        <a href="index.html" class="logo" aria-label="Inicio">
-            <img src="img/logo.png" alt="Logo de RegisColegio">
+        <a href="#inicio" class="logo">
+            <img src="assets/img/logo.png" alt="Logo de RegisColegio">
         </a>
 
         <nav class="menu">
             <ul class="menu-lista">
-                <li><a href="index.html" class="menu-enlace">Inicio</a></li>
-                <li><a href="index.html#nosotros" class="menu-enlace">Nosotros</a></li>
-                <li><a href="registro.html" class="menu-enlace activo" aria-current="page">Matricúlate</a></li>
+                <li><a href="#inicio" class="menu-enlace activo">Inicio</a></li>
+                <li><a href="#nosotros" class="menu-enlace">Nosotros</a></li>
+                <li><a href="#matriculate" class="menu-enlace">Matriculate</a></li>
                 <li class="desplegable">
-                    <a href="index.html#escuelas" class="menu-enlace">Escuelas</a>
+                    <a href="#escuelas" class="menu-enlace">Escuelas</a>
                     <ul class="submenu">
-                        <li><a href="index.html#escuelas">Tecnología</a></li>
-                        <li><a href="index.html#escuelas">Administración</a></li>
-                        <li><a href="index.html#escuelas">Diseño</a></li>
-                        <li><a href="index.html#escuelas">Comercio</a></li>
+                        <li><a href="#escuelas">Tecnologia</a></li>
+                        <li><a href="#escuelas">Administracion</a></li>
+                        <li><a href="#escuelas">Diseno</a></li>
+                        <li><a href="#escuelas">Comercio</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
 
-        <a href="login.html" class="boton">Iniciar Sesión</a>
+        <a href="login.html" class="boton">Iniciar Sesion</a>
     </header>
 
     <main>
@@ -54,7 +55,7 @@
                 y jornadas academicas.
             </p>
             <a href="#matriculate" class="boton hero-boton">Comenzar</a>
-            <img src="img/seccion2.png" alt="Estudiantes usando tabletas en un salon de clases" class="hero-imagen">
+            <img src="assets/img/seccion2.png" alt="Estudiantes usando tabletas en un salon de clases" class="hero-imagen">
         </section>
 
         <section id="nosotros" class="seccion seccion-nosotros">
@@ -69,17 +70,17 @@
 
             <ul class="pilares">
                 <li>
-                    <img src="img/iconos/mision.png" alt="">
+                    <img src="assets/iconos/mision.png" alt="">
                     <h3>Nuestra Mision</h3>
                     <p>Facilitar la gestion academica y mejorar la experiencia educativa.</p>
                 </li>
                 <li>
-                    <img src="img/iconos/vision.png" alt="">
+                    <img src="assets/iconos/vision.png" alt="">
                     <h3>Nuestra Vision</h3>
                     <p>Ser la plataforma educativa lider en innovacion y transformacion digital.</p>
                 </li>
                 <li>
-                    <img src="img/iconos/valores.png" alt="">
+                    <img src="assets/iconos/valores.png" alt="">
                     <h3>Nuestros Valores</h3>
                     <p>Compromiso, innovacion, respeto y trabajo en equipo.</p>
                 </li>
@@ -93,6 +94,35 @@
             </ul>
         </section>
 
+        <section id="matriculate" class="seccion seccion-matriculate">
+          <p class="antetitulo">Matriculate</p>
+          <h2 class="seccion-titulo">Haz parte de RegisColegio</h2>
+          <p class="seccion-texto">
+              Dejanos tus datos y te enviaremos toda la informacion sobre
+              nuestros programas, horarios y proceso de inscripcion.
+          </p>
+
+          <form action="#" method="post" class="formulario tarjeta-contacto">
+              <h3 class="contacto-titulo">Solicita informacion</h3>
+
+              <label for="contacto-nombre" class="etiqueta">Nombre</label>
+              <input type="text" id="contacto-nombre" name="nombre" class="campo"
+                    placeholder="Ingrese su nombre" required>
+
+              <label for="contacto-correo" class="etiqueta">Correo Electronico</label>
+              <input type="email" id="contacto-correo" name="correo" class="campo"
+                    placeholder="Ingrese su correo" required>
+
+              <label for="contacto-telefono" class="etiqueta">Telefono</label>
+              <input type="tel" id="contacto-telefono" name="telefono" class="campo"
+                    placeholder="Numero telefonico" required>
+
+              <button type="submit" class="boton boton-registro">Enviar</button>
+
+              <p>¿Prefieres crear tu cuenta de una vez? <a href="registro.html">Regístrate aquí</a></p>
+          </form>
+      </section>
+
         <section id="escuelas" class="seccion seccion-escuelas">
             <p class="antetitulo">Escuelas</p>
             <h2 class="seccion-titulo">Soluciones educativas para cada institucion</h2>
@@ -104,24 +134,24 @@
 
             <ul class="beneficios">
                 <li>
-                    <img src="img/iconos/gestion.png" alt="">
+                    <img src="assets/iconos/gestion.png" alt="">
                     <h3>Gestion academica</h3>
                     <p>Organiza matriculas, calificaciones, asistencias y mas en un solo lugar.</p>
                 </li>
                 <li>
-                    <img src="img/iconos/comunicacion.png" alt="">
+                    <img src="assets/iconos/comunicacion.png" alt="">
                     <h3>Comunicacion efectiva</h3>
                     <p>Conecta a docentes, estudiantes y familias de forma rapida y segura.</p>
                 </li>
             </ul>
 
-            <img src="img/seccion3.png" alt="Docente acompanando a estudiantes en clase" class="escuelas-imagen">
+            <img src="assets/img/seccion3.png" alt="Docente acompanando a estudiantes en clase" class="escuelas-imagen">
 
         </section>
 
     </main>
 
-    <footer class="footer">
+    <footer class="pie">
         <p>&copy; 2026 RegisColegio</p>
         <p>Todos los derechos reservados</p>
     </footer>

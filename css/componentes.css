@@ -63,7 +63,7 @@
     padding: 12px;
 }
 
-/* layout de 2 columnas */
+/* layout */
 .contenido {
     display: grid;
     grid-template-columns: 340px 1fr;
@@ -74,9 +74,8 @@
     padding: 50px 20px;
 }
 
-/* tarjeta blanca (la usan el formulario y la columna lateral) */
 .tarjeta-formulario,
-.tarjeta-lateral {
+.seccion-tabla {
     padding: 30px;
     background: var(--blanco);
     border: 1px solid var(--borde);
@@ -84,11 +83,15 @@
     box-shadow: var(--sombra);
 }
 
-.titulo-formulario {
+.titulo-formulario,
+.titulo-tabla {
     font-size: 20px;
     padding-bottom: 14px;
     margin-bottom: 6px;
     border-bottom: 1px solid var(--borde);
+}
+
+.titulo-formulario {
     text-align: center;
 }
 
@@ -121,6 +124,65 @@
     outline: none;
     border-color: var(--azul);
     box-shadow: 0 0 0 3px var(--azul-suave);
+}
+
+select.campo {
+    cursor: pointer;
+}
+
+select.campo:invalid {
+    color: #a3a7b0;
+}
+
+/* tabla */
+.seccion-tabla {
+    overflow-x: auto;
+}
+
+.tabla {
+    font-size: 14px;
+    text-align: left;
+}
+.titulo-tabla {
+    align-items: center;
+}
+
+.tabla th {
+    padding: 12px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gris);
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla td {
+    padding: 14px 10px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla tbody tr:hover {
+    background: var(--fondo);
+}
+
+.horario {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--azul-suave);
+    color: var(--azul);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tabla td:last-child {
+    color: var(--azul);
+    font-weight: 600;
 }
 
 /* submenu */
