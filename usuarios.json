@@ -5,7 +5,7 @@
     "telefono": "31048945825",
     "contrasena": "usuario1",
     "usuario": "vale1",
-    "roll": "estudiante"
+    "rol": "estudiante"
   },
   {
     "nombre": "Cristian Castro",
@@ -13,7 +13,7 @@
     "telefono": "32248924598",
     "contrasena": "usuario2",
     "usuario": "cis1",
-    "roll": "estudiante"
+    "rol": "estudiante"
   },
   {
     "nombre": "Francisco Leon",
@@ -21,6 +21,6 @@
     "telefono": "32248924598",
     "contrasena": "usuario3",
     "usuario": "pacho1",
-    "roll": "estudiante"
+    "rol": "estudiante"
   }
 ]

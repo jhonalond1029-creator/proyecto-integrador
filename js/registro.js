@@ -2,79 +2,75 @@ const formulario = document.querySelector('#form-registro')
 const nombre = document.querySelector('#nombre')
 const correo = document.querySelector('#correo')
 const telefono = document.querySelector('#telefono')
-
-const repassword = document.querySelector('#contrasena')
-const contrasena = document.querySelector('#contrasena')
 const usuario = document.querySelector('#usuario')
+const contrasena = document.querySelector('#contrasena')
+const repassword = document.querySelector('#repassword') // pon aquí el id real de tu campo de confirmar
 
-formulario.addEventListener('submit', function (event) {
-    event.preventDefault();
+async function cargarUsuariosJSON() {
+    const response = await fetch('usuarios.json')
 
-    if (contrasena.value !== contrasena.value) {
-        alert('la contraseña no coincide');
+    if (!response.ok) {
+        throw new Error('No se pudo leer usuarios.json (código ' + response.status + ')')
+    }
+
+    return await response.json()
+}
+
+formulario.addEventListener('submit', async function (event) {
+    event.preventDefault()
+
+    if (contrasena.value !== repassword.value) {
+        alert('La contraseña no coincide')
         return
     }
 
-    let usuarios = JSON.parse(localStorage.getItem('usuarios'))
-    if (usuarios === null) {
-        usuarios = []
-    }
+    const correoNuevo = correo.value.trim()
+    const usuarioNuevo = usuario.value.trim()
 
-    let hayAdmin = false
+    try {
+        const usuariosJSON = await cargarUsuariosJSON()
+        const usuariosLocales = JSON.parse(localStorage.getItem('usuarios')) || []
+        const todos = usuariosJSON.concat(usuariosLocales)
 
-    for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].rol === 'administrador') {
-            hayAdmin = true
+        let correoExiste = false
+        let usuarioExiste = false
+
+        for (let i = 0; i < todos.length; i++) {
+            if (todos[i].correo === correoNuevo) {
+                correoExiste = true
+            }
+            if (todos[i].usuario === usuarioNuevo) {
+                usuarioExiste = true
+            }
         }
-    }
 
-    if (hayAdmin === false) {
-        usuarios.push({
-        nombre: 'admin',
-        correo: 'admin@gmail',
-        telefono: '000000000000',
-        contrasena: 'admin',
-        usuario: 'admin1',
-        rol: 'administrador'
-
-        })
-        localStorage.setItem('usuarios', JSON.stringify(usuarios))
-    }
-
-    let correoExiste = false
-    let usuarioExiste = false
-
-    for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].correo === correo.value) {
-            correoExiste = true
+        if (correoExiste) {
+            alert('Ese correo ya está registrado')
+            return
         }
-        if (usuarios[i].usuario === usuario.value) {
-            usuarioExiste = true
+        if (usuarioExiste) {
+            alert('Ese usuario ya existe')
+            return
         }
-    }
-    if (correoExiste === true) {
-        alert('Ese correo ya está registrado')
-        return
-    }
-    if (usuarioExiste === true) {
-        alert('Ese usuario ya existe')
-        return
-    }
 
+        const newUsuario = {
+            nombre: nombre.value.trim(),
+            correo: correoNuevo,
+            telefono: telefono.value.trim(),
+            contrasena: contrasena.value,
+            usuario: usuarioNuevo,
+            rol: 'estudiante'
+        }
 
-    const newUsuario = {
-        nombre: nombre.value.trim(),
-        correo: correo.value.trim(),
-        telefono: telefono.value.trim(),
-        contrasena: contrasena.value,
-        usuario: usuario.value.trim(),
-        rol: 'estudiante'
+        usuariosLocales.push(newUsuario)
+        localStorage.setItem('usuarios', JSON.stringify(usuariosLocales))
 
+        alert('¡Registro exitoso!')
+        formulario.reset()
+        window.location.href = 'login.html'
+
+    } catch (error) {
+        console.error(error)
+        alert('No se pudo completar el registro, intenta más tarde')
     }
-    usuarios.push(newUsuario)
-    localStorage.setItem('usuarios', JSON.stringify(usuarios))
-
-    alert('¡Registro exitoso!')
-    formulario.reset()
-    window.location.href = 'login.html'
 })

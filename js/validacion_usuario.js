@@ -1,4 +1,3 @@
-
 const maxIntentos = 3;
 let intentos = 0;
 
@@ -8,7 +7,6 @@ const inputContrasena = document.getElementById("login-contrasena");
 const btnVerContrasena = document.getElementById("btn-ver-contrasena");
 const btnLogin = document.getElementById("btn-login");
 const mensaje = document.getElementById("login-mensaje");
-
 
 async function cargarUsuariosJSON() {
     const response = await fetch('usuarios.json');
@@ -51,18 +49,17 @@ formLogin.addEventListener('submit', async function (e) {
 
         if (encontrado !== null) {
 
-            setTimeout(()=>{
-
+            setTimeout(() => {
                 alert(`Bienvenido ${encontrado.nombre}`);
                 intentos = 0;
-                
+
                 if (encontrado.rol === 'administrador') {
                     window.location.href = 'profesores.html';
                 } else {
                     window.location.href = 'estudiante.html';
                 }
-            },2000)
-                
+            }, 2000);
+
         } else {
             intentos++;
             let restantes = maxIntentos - intentos;
