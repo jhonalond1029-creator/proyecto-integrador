@@ -4,7 +4,7 @@ const correo = document.querySelector('#correo')
 const telefono = document.querySelector('#telefono')
 const usuario = document.querySelector('#usuario')
 const contrasena = document.querySelector('#contrasena')
-const repassword = document.querySelector('#repassword') // pon aquí el id real de tu campo de confirmar
+const repassword = document.querySelector('#repassword') 
 
 async function cargarUsuariosJSON() {
     const response = await fetch('usuarios.json')

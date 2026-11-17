@@ -10,7 +10,7 @@ const mensaje = document.getElementById("login-mensaje");
 
 async function cargarUsuariosJSON() {
     const response = await fetch('usuarios.json');
-
+    
     return await response.json();
 }
 
