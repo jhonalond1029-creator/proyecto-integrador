@@ -31,6 +31,9 @@ formLogin.addEventListener('submit', async function (e) {
         return;
     }
 
+    mensaje.textContent = "Validando usuario...";
+    btnLogin.disabled = true;
+
     try {
         const usuariosJSON = await cargarUsuariosJSON();
         const usuariosLocales = cargarUsuariosLocales();
@@ -49,6 +52,8 @@ formLogin.addEventListener('submit', async function (e) {
 
         if (encontrado !== null) {
 
+            localStorage.setItem('sesion', JSON.stringify(encontrado));
+
             setTimeout(() => {
                 alert(`Bienvenido ${encontrado.nombre}`);
                 intentos = 0;
@@ -58,9 +63,10 @@ formLogin.addEventListener('submit', async function (e) {
                 } else {
                     window.location.href = 'estudiante.html';
                 }
-            }, 2000);
+            }, 300);
 
         } else {
+            btnLogin.disabled = false;
             intentos++;
             let restantes = maxIntentos - intentos;
 
@@ -77,6 +83,7 @@ formLogin.addEventListener('submit', async function (e) {
 
     } catch (error) {
         console.error(error);
+        btnLogin.disabled = false;
         mensaje.textContent = "No se pudo cargar la información, intenta más tarde";
     }
 });

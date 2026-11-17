@@ -22,5 +22,13 @@
     "contrasena": "usuario3",
     "usuario": "pacho1",
     "rol": "estudiante"
+  },
+  {
+    "nombre": "Administrador",
+    "correo": "admin@regiscolegio.com",
+    "telefono": "3000000000",
+    "contrasena": "admin123",
+    "usuario": "admin",
+    "rol": "administrador"
   }
 ]
