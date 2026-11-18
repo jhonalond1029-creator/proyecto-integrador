@@ -4,7 +4,6 @@
         scroll-margin-top: 110px;
     }
 
-    
     .encabezado {
         flex-wrap: wrap;
         row-gap: 10px;
@@ -18,10 +17,10 @@
 
     .menu-lista {
         justify-content: center;
-        gap: 24px;
+        flex-wrap: wrap;
+        gap: 8px 24px;
     }
 
-   
     .contenido {
         grid-template-columns: 1fr;
         padding: 30px 20px;
@@ -31,12 +30,10 @@
         overflow-x: auto;
     }
 
-    
     .hero,
     .seccion-matriculate,
     .seccion-escuelas {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
     }
 
     .hero {
@@ -81,7 +78,6 @@
 
 /* celular */
 @media (max-width: 600px) {
-    
     .logo img {
         width: 40px;
     }
@@ -92,7 +88,6 @@
     }
 
     .menu-lista {
-        flex-wrap: wrap;
         gap: 6px 16px;
     }
 
@@ -105,7 +100,6 @@
         transform: translateX(-50%);
     }
 
-    
     .contenido {
         padding: 20px 12px;
     }
@@ -125,7 +119,14 @@
         padding: 10px 6px;
     }
 
-    
+    .seccion {
+        padding: 40px 16px;
+    }
+
+    .hero {
+        padding: 40px 16px;
+    }
+
     .hero-titulo {
         font-size: 30px;
     }
